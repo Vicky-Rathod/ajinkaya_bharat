@@ -1,0 +1,1096 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<!-- Mirrored from www.gavakari.in/epaper/edition/564/gavakari-18-april-2020 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2020 08:39:36 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="description" content=" Matrubhumi is Akola District&#039;s , Matrubhumi is one of the leading newspapers of Akola.
+" />
+	<meta name="keywords" content=" daily marathi news paper,  marathi newspaper online,  newspaper in marathi,  epaper in marathi,  marathi news paper,  dainik Matrubhumi,  Matrubhumi epaper, Matrubhumi" />
+	<meta property="og:title" content="Matrubhumi {{daily.date}}- Matrubhumi ePaper | Matrubhumi Marathi News Paper | Daily News ePaper | Online Marathi News Paper - Matrubhumi ePaper | Matrubhumi Marathi News Paper | Daily News ePaper | Online Marathi News Paper" />
+	<meta property="og:site_name" content="Matrubhumi ePaper | Matrubhumi Marathi News Paper | Daily News ePaper | Online Marathi News Paper" />
+	<meta property="og:description" content=" Matrubhumi is Akola District&#039;s , Matrubhumi is one of the leading newspapers of Akola.
+" />
+	<meta name="twitter:title" content="Matrubhumi{{daily.date}}- Matrubhumi ePaper | Matrubhumi Marathi News Paper | Daily News ePaper | Online Marathi News Paper - Matrubhumi ePaper | Matrubhumi Marathi News Paper | Daily News ePaper | Online Marathi News Paper" />
+	<meta name="twitter:description" content=" Matrubhumi is Akola District&#039;s , Matrubhumi is one of the leading newspapers of Akola.
+" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/1196265a/jui/css/base/jquery-ui.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/11fdf50f/font-awesome/css/font-awesome.min.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/11fdf50f/css/hover.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'themes/press/assets/coreassets/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'themes/press/assets/coreassets/responsive.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/11fdf50f/css/jquery.loadmask.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/26c6e6d0/colorbox/example3/colorbox.css' %}" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" />
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/ba0c3cbd/iealert/style.css' %}" />
+	<link href="{% static 'magiczoomplus/magiczoomplus.css' %}" rel="stylesheet" type="text/css" media="screen" />
+	<script src="{% static 'magiczoomplus/magiczoomplus.js' %}" type="text/javascript"></script>
+	<style type="text/css">
+	
+		html {
+		            position: relative;
+		            min-height: 100%;
+		        }
+
+		        body {
+		            position: absolute;
+		            left: 0;
+		            right: 0;
+		            min-height: 100%;
+		            background: #fff;
+		            margin: 0;
+		            padding: 0;
+		            font-size: 100%;
+		            display: flex;
+		        }
+
+		        body,
+		        td {
+		            font-family: 'Helvetica Neue', Helvetica, 'Lucida Grande', Tahoma, Arial, Verdana, sans-serif;
+		            line-height: 1.5em;
+		            -webkit-text-rendering: geometricPrecision;
+		            text-rendering: geometricPrecision;
+		        }
+
+		        h1 {
+		            font-size: 1.5em;
+		            font-weight: normal;
+		            color: #555;
+		        }
+
+		        h2 {
+		            font-size: 1.3em;
+		            font-weight: normal;
+		            color: #555;
+		        }
+
+		        h2.caption {
+		            margin: 2.5em 0 0;
+		        }
+
+		        h3 {
+		            font-size: 1.1em;
+		            font-weight: normal;
+		            color: #555;
+		        }
+
+		        h3.pad {
+		            margin: 2em 0 1em;
+		        }
+
+		        h4 {
+		            font-size: 1em;
+		            font-weight: normal;
+		            color: #555;
+		        }
+
+		        p.pad {
+		            margin-top: 1.5em;
+		        }
+
+		        a {
+		            outline: none;
+		        }
+
+
+		        .cfg-btn {
+		            background-color: rgb(55, 181, 114);
+		            color: #fff;
+		            border: 0;
+		            box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.3);
+		            outline: 0;
+		            cursor: pointer;
+		            width: 200px;
+		            padding: 10px;
+		            font-size: 1em;
+		            position: relative;
+		            display: inline-block;
+		            margin: 10px auto;
+		        }
+
+		        .cfg-btn:hover:not([disabled]) {
+		            background-color: rgb(37, 215, 120);
+		        }
+
+		        .mobile-magic .cfg-btn:hover:not([disabled]) {
+		            background: rgb(55, 181, 114);
+		        }
+
+		        .cfg-btn[disabled] {
+		            opacity: .5;
+		            color: #808080;
+		            background: #ddd;
+		        }
+
+		        .cfg-btn.btn-preview,
+		        .cfg-btn.btn-preview:active,
+		        .cfg-btn.btn-preview:focus {
+		            font-size: 1em;
+		            position: relative;
+		            display: block;
+		            margin: 10px auto;
+		        }
+
+		        .cfg-btn,
+		        .preview,
+		        .app-figure,
+		        .api-controls,
+		        .wizard-settings,
+		        .wizard-settings .inner,
+		        .wizard-settings .footer,
+		        .wizard-settings input,
+		        .wizard-settings select {
+		            -webkit-box-sizing: border-box;
+		            -moz-box-sizing: border-box;
+		            box-sizing: border-box;
+		        }
+
+		        .preview,
+		        .wizard-settings {
+		            padding: 10px;
+		            border: 0;
+		            min-height: 1px;
+		        }
+
+
+
+		        .api-controls {
+		            text-align: center;
+		        }
+
+		        .api-controls button,
+		        .api-controls button:active,
+		        .api-controls button:focus {
+		            width: 80px;
+		            font-size: .7em;
+		            white-space: nowrap;
+		        }
+
+		        .app-figure {
+		            width: 80% !important;
+		            margin: 0px auto;
+		            border: 0px solid red;
+		            padding: 20px;
+		            position: relative;
+		            text-align: center;
+		        }
+
+		        .selectors {
+		            margin-top: 10px;
+		        }
+
+		        .selectors .mz-thumb img {
+		            max-width: 56px;
+		        }
+
+		        .app-code-sample {
+		            max-width: 80%;
+		            margin: 30px auto 0;
+		            text-align: center;
+		            position: relative;
+		        }
+
+		        .app-code-sample input[type="radio"] {
+		            display: none;
+		        }
+
+		        .app-code-sample label {
+		            display: inline-block;
+		            padding: 2px 12px;
+		            margin: 0;
+		            font-size: .8em;
+		            text-decoration: none;
+		            cursor: pointer;
+		            color: #666;
+		            border: 1px solid rgba(136, 136, 136, 0.5);
+		            background-color: transparent;
+		        }
+
+		        .app-code-sample label:hover {
+		            color: #fff;
+		            background-color: rgb(253, 154, 30);
+		            border-color: rgb(253, 154, 30);
+		        }
+
+		        .app-code-sample input[type="radio"]:checked+label {
+		            color: #fff;
+		            background-color: rgb(110, 110, 110) !important;
+		            border-color: rgba(110, 110, 110, 0.7) !important;
+		        }
+
+		        .app-code-sample label:first-of-type {
+		            border-radius: 4px 0 0 4px;
+		            border-right-color: transparent;
+		        }
+
+		        .app-code-sample label:last-of-type {
+		            border-radius: 0 4px 4px 0;
+		            border-left-color: transparent;
+		        }
+
+		        .app-code-sample .app-code-holder {
+		            padding: 0;
+		            position: relative;
+		            border: 1px solid #eee;
+		            border-radius: 0px;
+		            background-color: #fafafa;
+		            margin: 15px 0;
+		        }
+
+		        .app-code-sample .app-code-holder>div {
+		            display: none;
+		        }
+
+		        .app-code-sample .app-code-holder pre {
+		            text-align: left;
+		            white-space: pre-line;
+		            border: 0px solid #eee;
+		            border-radius: 0px;
+		            background-color: transparent;
+		            padding: 25px 50px 25px 25px;
+		            margin: 0;
+		            min-height: 25px;
+		        }
+
+		        .app-code-sample input[type="radio"]:nth-of-type(1):checked~.app-code-holder>div:nth-of-type(1) {
+		            display: block;
+		        }
+
+		        .app-code-sample input[type="radio"]:nth-of-type(2):checked~.app-code-holder>div:nth-of-type(2) {
+		            display: block;
+		        }
+
+		        .app-code-sample .app-code-holder .cfg-btn-copy {
+		            display: none;
+		            z-index: -1;
+		            position: absolute;
+		            top: 10px;
+		            right: 10px;
+		            width: 44px;
+		            font-size: .65em;
+		            white-space: nowrap;
+		            margin: 0;
+		            padding: 4px;
+		        }
+
+		        .copy-msg {
+		            font: normal 11px/1.2em 'Helvetica Neue', Helvetica, 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, sans-serif;
+		            color: #2a4d14;
+		            border: 1px solid #2a4d14;
+		            border-radius: 4px;
+		            position: absolute;
+		            top: 8px;
+		            left: 0;
+		            right: 0;
+		            width: 200px;
+		            max-width: 70%;
+		            padding: 4px;
+		            margin: 0px auto;
+		            text-align: center;
+		        }
+
+		        .copy-msg-failed {
+		            color: #b80c09;
+		            border-color: #b80c09;
+		            width: 430px;
+		        }
+
+		        .mobile-magic .app-code-sample .cfg-btn-copy {
+		            display: none;
+		        }
+
+		        #code-to-copy {
+		            position: absolute;
+		            width: 0;
+		            height: 0;
+		            top: -10000px;
+		        }
+
+		        .lt-ie9-magic .app-code-sample {
+		            display: none;
+		        }
+
+		        .wizard-settings {
+		            background-color: #4f4f4f;
+		            color: #a5a5a5;
+		            position: absolute;
+		            right: 0;
+		            width: 340px;
+		        }
+
+		        .wizard-settings .inner {
+		            width: 100%;
+		            margin-bottom: 30px;
+		        }
+
+		        .wizard-settings .footer {
+		            color: #c7d59f;
+		            font-size: .75em;
+		            width: 100%;
+		            position: relative;
+		            vertical-align: bottom;
+		            text-align: center;
+		            padding: 6px;
+		            margin-top: 10px;
+		        }
+
+		        .wizard-settings .footer a {
+		            color: inherit;
+		            text-decoration: none;
+		        }
+
+		        .wizard-settings .footer a:hover {
+		            text-decoration: underline;
+		        }
+
+		        .wizard-settings a {
+		            color: #cc9933;
+		        }
+
+		        .wizard-settings a:hover {
+		            color: #dfb363;
+		        }
+
+		        .wizard-settings table>tbody>tr>td {
+		            vertical-align: top;
+		        }
+
+		        .wizard-settings table {
+		            min-width: 300px;
+		            max-width: 100%;
+		            font-size: .8em;
+		            margin: 0 auto;
+		        }
+
+		        .wizard-settings table caption {
+		            font-size: 1.5em;
+		            padding: 16px 8px;
+		        }
+
+		        .wizard-settings table td {
+		            padding: 4px 8px;
+		        }
+
+		        .wizard-settings table td:first-child {
+		            white-space: nowrap;
+		        }
+
+		        .wizard-settings table td:nth-child(2) {
+		            text-align: left;
+		        }
+
+		        .wizard-settings table td .values {
+		            color: #a08794;
+		            font-size: 0.8em;
+		            line-height: 1.3em;
+		            display: block;
+		            max-width: 126px;
+		        }
+
+
+		        #leftArrow {
+
+		            width: 40px;
+		            height: 40px;
+		            background: #ff0000;
+		            position: absolute;
+		            left: 0px;
+		        }
+
+		        #rightArrow {
+
+		            width: 40px;
+		            height: 40px;
+		            background: #ff0000;
+		            position: absolute;
+		            right: 0px;
+		        }
+
+		        .wizard-settings table td .values:before {
+		            content: '';
+		            display: block;
+		        }
+
+		        .wizard-settings input,
+		        .wizard-settings select {
+		            width: 126px;
+		        }
+
+		        .wizard-settings input {
+		            padding: 0px 4px;
+		        }
+
+		        .wizard-settings input[disabled] {
+		            color: #808080;
+		            background: #a7a7a7;
+		            border: 1px solid #a7a7a7;
+		        }
+
+		        .preview {
+		            width: 80%;
+		            float: left;
+		            position: relative;
+		            display: grid;
+		             grid-gap: 10px;
+		        }
+
+		        @media (min-width: 0px) {
+		            .preview {
+		                width: 100%;
+		                float: none;
+		                display: grid;
+		                grid-gap: 5 px;
+		            }
+		        }
+
+		        @media (min-width: 1024px) {
+		            .preview {
+		                width: calc(100% - 340px);
+		            }
+
+		            .wizard-settings {
+		                top: 0;
+		                min-height: 100%;
+		            }
+
+		            .wizard-settings .inner {
+		                margin-top: 60px;
+		            }
+
+		            .wizard-settings .footer {
+		                position: absolute;
+		                bottom: 0;
+		                left: 0;
+		            }
+
+		            .wizard-settings .settings-controls {
+		                position: fixed;
+		                top: 0;
+		                right: 0;
+		                width: 340px;
+		                padding: 10px 0 0;
+		                text-align: center;
+		                background-color: inherit;
+		            }
+		        }
+
+		        @media screen and (max-width: 1024px) {
+
+		            .api-controls button,
+		            .api-controls button:active,
+		            .api-controls button:focus {
+		                width: 70px;
+		            }
+		        }
+
+		        @media screen and (max-width: 1023px) {
+		            .app-figure {
+		                width: 98% !important;
+		                margin: 50px auto;
+		                padding: 0;
+		            }
+		        }
+		            @media (min-width: 1820px) {
+		            .app-figure {
+		                width: 80% !important;
+		                margin-left: -23%;
+		                padding: 0;
+		                padding-bottom: 60%;
+		            }
+		        }
+		            .app-code-sample {
+		                display: none;
+		            }
+
+		            .wizard-settings {
+		                width: 100%;
+		            }
+		        }
+
+		        @media screen and (max-width: 600px) {
+		            .mz-thumb img {
+		                max-width: 39px;
+		            }
+		        }
+
+		        @media screen and (max-width: 560px) {
+		            .api-controls .sep {
+		                content: '';
+		                display: table;
+		            }
+		        }
+
+		        @media screen and (min-width: 1600px) {
+		            .preview {
+		                padding: 10px 160px;
+		            }
+		        }
+
+		       .imgheight .MagicZoom img{
+		           height:649px;width:950px;
+		        }
+		        @media (max-width: 528px) {
+		        .imgheight .MagicZoom img{
+		           height:649px;
+		           width:950px;
+		        }
+		        }
+
+		        .box {
+
+		            width: 150%;
+		            border: 2px solid black;
+		            padding: 1px;
+		            margin-top: 10px;
+		            margin-left: -10%;
+		        }
+		        .api-controls {
+		            width: 150%;
+		            margin-left: -10%;
+		            margin-top: 10%;
+		            }
+		        @media (max-width: 528px) {
+		        .box {
+		        width: 150%;
+
+		        border: 2px solid black;
+		        padding: 1px;
+		        margin-top: 10px;
+		        margin-left: -1%
+
+		}
+		 }
+		@media (max-width: 528px) {
+		        .api-controls {
+		        width: 150%;
+
+		        margin-left: -5%
+
+		}
+		}
+		        @media (min-width:1920px){
+		           .imgheight .MagicZoom img{
+		           height:749px;width:950px;
+		        }
+		        }
+		        @media (min-width:1820px){
+		         .box {
+
+		            width: 180%;
+		            border: 2px solid black;
+		            padding: 1px;
+		            margin-top: 10px;
+		            margin-left: -188px;
+		            left: 40%
+		        }
+		        }
+		        @media (min-width:1820px){
+		        .api-controls{
+		            width: 180%;
+		            margin-left: -188px;
+		            margin-top: 10%;
+		        }
+		    }
+	</style>
+	<script type="text/javascript" src="{% static 'assets/1196265a/jquery.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/1196265a/jui/js/jquery-ui.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/11fdf50f/js/jquery.scrollTo.min.js'  %}"></script>
+	<script type="text/javascript" src="{% static 'assets/11fdf50f/js/jquery.mapster.js' %}"></script>
+	<script type="text/javascript" src="{% static 'assets/11fdf50f/js/modernizr.min.js' %}"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="{% static 'assets/26c6e6d0/colorbox/jquery.colorbox-min.js' %}"></script>
+	<title>Matrubhumi{{daily.date}}- Matrubhumi ePaper | Matrubhumi Marathi News Paper | Daily News ePaper | Online Marathi News Paper - Matrubhumi ePaper | Matrubhumi Marathi News Paper | Daily News ePaper | Online Marathi News Paper</title>
+	<script>
+		$( function() {
+		  $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' }).val();;
+		} );
+		</script>
+	<style>
+		body {
+		            background-color: #eaeaea;
+		            background-image: url();
+		            background-repeat: no-repeat;
+		            background-position: top center;
+		            background-attachment: fixed;
+		            font-family: 'Roboto';
+		        }
+
+		        .page_heading,
+		        .epost-title a,
+		        .subcategory-block h3 a,
+		        .title-header,
+		        #page-heading-inner,
+		        .widget_title,
+		        .fcategorylist-block h4,
+		        .page-heading {
+		            font-family: 'Roboto';
+		        }
+
+		        a {
+		            color: #1570a6;
+		        }
+
+		        a:hover {
+		            color: #1570a6;
+		        }
+
+		        .epost-title a,
+		        .subcategory-block h3 a,
+		        .fcategorylist-block h4 a,
+		        .widget_title i {
+		            color: #1570a6;
+		        }
+
+		        .page-heading,
+		        #mainmenu,
+		        .title-header {
+		            border-top-color: #1570a6;
+		        }
+
+		        @media (max-width: 528px) {
+		            .pane {
+		                overflow: auto;
+		                clear: left;
+		                margin: 10px 0 0 10px;
+		                position: relative;
+		                width: 330px;
+		                height: 120px;
+		            }
+
+		        }
+
+		        @media (max-width: 528px) {
+		            .leftarrow {
+		                display: none;
+		            }
+		        }
+
+		        @media (max-width: 528px) {
+		            .rightarrow {
+		                display: none;
+		            }
+		        }
+
+		        @media (min-width: 1828px) {
+		            .rightarrow {
+		                vertical-align: middle;
+		                position: absolute;
+		                top: 385px;
+		                left: -208px;
+		            }
+		        }
+		        @media (max-width: 528px) {
+		            .selectors {
+		                margin-left: auto;
+		                width: 150%;
+		                padding: 10px;
+		            }
+		        }
+
+		        @media (max-width: 528px) {
+		            .app-figure {
+		                padding: 0%;
+		                margin-left: 10%;
+		                left: 0%;
+
+		            }
+		        }
+
+		        @media (max-width: 528px) {
+		            .preview {
+		                padding-left: 0;
+		                margin: 0;
+		                display: grid;
+		                grid-gap: 5px;
+		                left: -15%;
+		            }
+		        }
+
+		        .navbar-btn2,
+		        .navbar-btn2:hover,
+		        .navbar-btn2:focus,
+		        .navbar-btn2:active,
+		        .open .dropdown-toggle.navbar-btn2 {
+		            background-color: #1570a6;
+		        }
+
+
+		        /******************************/
+		        /* PAGINATION CONTROL STYLING */
+		        /******************************/
+
+		        .pagination>li>a,
+		        .pagination>li>span {
+		            color: #1570a6;
+		        }
+
+		        .pagination>li>a:hover,
+		        .pagination>li>span:hover {
+		            color: #1570a6;
+		        }
+
+		        .pagination>.active>a,
+		        .pagination>.active>span,
+		        .pagination>.active>a:hover,
+		        .pagination>.active>span:hover,
+		        .pagination>.active>a:focus,
+		        .pagination>.active>span:focus {
+		            background-color: #1570a6;
+		            border-color: #1570a6;
+		        }
+
+
+		        .app-figure {
+		            width: 80% !important;
+		            margin: 0px auto;
+		            border: 0px solid red;
+		            padding: 20px;
+		            position: relative;
+		            text-align: center;
+		        }
+
+		        .selectors {
+		            margin-top: 10px;
+		        }
+
+		        .selectors .mz-thumb img {
+		            max-width: 56px;
+		        }
+
+		        .container{
+
+
+		        }
+
+		#page-thumbs {
+		    background-color: white;
+		    height: 600px;
+		    width: 100%;
+		    border-color: #ddd;
+		    border-style: solid;
+		    border-width: 0 1px;
+		    overflow: auto;
+		    text-align: center;
+		}
+		@media (min-width:1820px){
+		#page-thumbs {
+		    background-color: white;
+		    height: 700px;
+		    width: 100%;
+		    border-color: #ddd;
+		    border-style: solid;
+		    border-width: 0 1px;
+		    overflow: auto;
+
+		    text-align: center;
+		}
+		}
+	</style>
+	<script>
+		$.fn.bootstrapBtn = $.fn.button.noConflict();
+		        $.ajaxSetup({
+		            type: "post",
+		            dataType: "json",
+		            error: function (XMLHttpRequest, textStatus, errorThrown) {
+		                alert("Error : " + errorThrown + "\nStatus : " + textStatus);
+		            }
+		        });
+	</script>
+	<link rel="icon" type="image/ico" href="{% static 'uploads/media/2019-12/5e05e95f305fa.ico' %}">
+</head>
+<script type="text/javascript">
+	var mzOptions = {};
+	    mzOptions = {
+	        onZoomReady: function () {
+	            console.log('onReady', arguments[0]);
+	        },
+	        onUpdate: function () {
+	            console.log('onUpdated', arguments[0], arguments[1], arguments[2]);
+	        },
+	        onZoomIn: function () {
+	            console.log('onZoomIn', arguments[0]);
+	        },
+	        onZoomOut: function () {
+	            console.log('onZoomOut', arguments[0]);
+	        },
+	        onExpandOpen: function () {
+	            console.log('onExpandOpen', arguments[0]);
+	        },
+	        onExpandClose: function () {
+	            console.log('onExpandClosed', arguments[0]);
+	        }
+	    };
+	    var mzMobileOptions = {};
+
+	    function isDefaultOption(o) {
+	        return magicJS.$A(magicJS.$(o).byTag('option')).filter(function (opt) {
+	            return opt.selected && opt.defaultSelected;
+	        }).length > 0;
+	    }
+
+	    function toOptionValue(v) {
+	        if (/^(true|false)$/.test(v)) {
+	            return 'true' === v;
+	        }
+	        if (/^[0-9]{1,}$/i.test(v)) {
+	            return parseInt(v, 10);
+	        }
+	        return v;
+	    }
+
+	    function makeOptions(optType) {
+	        var value = null,
+	            isDefault = true,
+	            newParams = Array(),
+	            newParamsS = '',
+	            options = {};
+	        magicJS.$(magicJS.$A(magicJS.$(optType).getElementsByTagName("INPUT"))
+	                .concat(magicJS.$A(magicJS.$(optType).getElementsByTagName('SELECT'))))
+	            .forEach(function (param) {
+	                value = ('checkbox' == param.type) ? param.checked.toString() : param.value;
+
+	                isDefault = ('checkbox' == param.type) ? value == param.defaultChecked.toString() :
+	                    ('SELECT' == param.tagName) ? isDefaultOption(param) : value == param.defaultValue;
+
+	                if (null !== value && !isDefault) {
+	                    options[param.name] = toOptionValue(value);
+	                }
+	            });
+	        return options;
+	    }
+
+	    function updateScriptCode() {
+	        var code = '&lt;script&gt;\nvar mzOptions = ';
+	        code += JSON.stringify(mzOptions, null, 2).replace(/\"(\w+)\":/g, "$1:") + ';';
+	        code += '\n&lt;/script&gt;';
+
+	        magicJS.$('app-code-sample-script').changeContent(code);
+	    }
+
+	    function updateInlineCode() {
+	        var code = '&lt;a class="MagicZoom" data-options="';
+	        code += JSON.stringify(mzOptions).replace(/\"(\w+)\":(?:\"([^"]+)\"|([^,}]+))(,)?/g, "$1: $2$3; ").replace(
+	            /\{([^{}]*)\}/, "$1").replace(/\s*$/, '');
+	        code += '"&gt;';
+
+	        magicJS.$('app-code-sample-inline').changeContent(code);
+	    }
+
+	    function applySettings() {
+	        MagicZoom.stop('Zoom-1');
+	        mzOptions = makeOptions('params');
+	        mzMobileOptions = makeOptions('mobile-params');
+	        MagicZoom.start('Zoom-1');
+	        updateScriptCode();
+	        updateInlineCode();
+	        try {
+	            prettyPrint();
+	        } catch (e) {}
+	    }
+
+	    function copyToClipboard(src) {
+	        var
+	            copyNode,
+	            range, success;
+
+	        if (!isCopySupported()) {
+	            disableCopy();
+	            return;
+	        }
+	        copyNode = document.getElementById('code-to-copy');
+	        copyNode.innerHTML = document.getElementById(src).innerHTML;
+
+	        range = document.createRange();
+	        range.selectNode(copyNode);
+	        window.getSelection().addRange(range);
+
+	        try {
+	            success = document.execCommand('copy');
+	        } catch (err) {
+	            success = false;
+	        }
+	        window.getSelection().removeAllRanges();
+	        if (!success) {
+	            disableCopy();
+	        } else {
+	            new magicJS.Message('Settings code copied to clipboard.', 3000,
+	                document.querySelector('.app-code-holder'), 'copy-msg');
+	        }
+	    }
+
+	    function disableCopy() {
+	        magicJS.$A(document.querySelectorAll('.cfg-btn-copy')).forEach(function (node) {
+	            node.disabled = true;
+	        });
+	        new magicJS.Message('Sorry, cannot copy settings code to clipboard. Please select and copy code manually.',
+	            3000,
+	            document.querySelector('.app-code-holder'), 'copy-msg copy-msg-failed');
+	    }
+
+	    function isCopySupported() {
+	        if (!window.getSelection || !document.createRange || !document.queryCommandSupported) {
+	            return false;
+	        }
+	        return document.queryCommandSupported('copy');
+	    }
+</script>
+
+<body>
+	<script>
+		$("body").iealert({
+		            support: "ie8",
+		            title: "Did you know that your Internet Explorer is out of date?",
+		            text: "To get the best possible experience using our site we recommend that you upgrade to a modern web browser. To download a newer web browser click on the Upgrade button.",
+		            upgradeTitle: "Upgrade"
+		        });
+	</script>
+	<div class="container-fluid">
+	                <section>
+						<header id="header">
+							<div class="row">
+								<div class="col-sm-4 site-logo">
+									<a href="#">
+										<img src="{% static 'images/MATLOGO.jpeg' %}" alt=' Matrubhumi ePaper | Matrubhumi Marathi News Paper | Daily News ePaper | Online Marathi News Paper' style="display: block;width: 70%;" />
+									</a>
+								</div>
+							</div>
+						</header>
+						<nav id="mainmenu">
+							<div class="navbar navbar-default navbar-inverse">
+								<div class="navbar-inner">
+									<div class="navbar-header">
+										<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
+											<span class="icon-bar"></span>
+											<span class="icon-bar"></span>
+											<span class="icon-bar"></span>
+										</button> <a class="navbar-brand visible-xs" style='padding-top:5px; ' href="{% url 'city'  %}">
+								   {{daily.date}}
+										</a>
+									</div>
+									<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+										<ul class="nav navbar-nav">
+											<li class="hidden-xs"><a rel="nofollow" href="#"><span
+														class='glyphicon glyphicon-home'></span></a>
+											</li>
+											<li><a target="_self" href="{% url 'city' %}">Home</a>
+											</li>
+											<li><a target="_self" href="#">Contact Us</a>
+											</li>{% for nav in city %}
+											<li> <a target="_self" href="{% url 'dailyfeed' nav.city.cityid %}" style="color: white;"><b>{{nav.city.name}}</b> </a>
+											</li>{% endfor %}</ul>
+										
+										<div class="pull-right archive-bar" style="margin-right:10px;">
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</nav>
+						<div class="section-body">
+							<!-- BEGIN DATATABLE 2 -->
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="card">
+										<div class="card-header">
+											<header>All Newspaper Data</header>
+											
+										</div>
+										<div class="card-body">
+										<div class=:table-responsive>
+												<table id="example"class="table table-striped table-bordered" style="width:100%">
+													<thead>
+														<tr>
+															
+															<th>City</th>
+															<th>Date</th>
+														
+															
+															<th width="20px">Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														{% for order in daily %}
+															<tr class="gradeX">
+																
+																<td>{{ order.city.name }} </td>
+																<td>{{ order.date }}</td>
+																
+																<td>
+																		<a href="#" ><i class="fa-2x fa fa-trash"></i> </a>
+																	
+																  
+																</td>
+															</tr>
+														{% endfor %}
+													</tbody>
+												</table>
+										 </div>   <!--end .table-responsive -->
+										</div>   
+									</div>       
+								</div><!--end .col -->
+							</div><!--end .row -->
+							<!-- END DATATABLE 2 -->
+					
+						</div><!--end .section-body -->
+					</section>
+				</div>
+					<script>
+	$(document).ready(function() {
+		$('#example').DataTable();
+	} );
+					</script>
+	<div id="cboxOverlay" style="opacity: 0; cursor: pointer; visibility: visible; display: none;"></div>
+	<div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none; visibility: visible; top: 836px; left: 460px; position: absolute; width: 600px; height: 450px; opacity: 0;">
+		<div id="cboxWrapper" style="height: 450px; width: 600px;">
+			<div>
+				<div id="cboxTopLeft" style="float: left;"></div>
+				<div id="cboxTopCenter" style="float: left; width: 600px;"></div>
+				<div id="cboxTopRight" style="float: left;"></div>
+			</div>
+			<div style="clear: left;">
+				<div id="cboxMiddleLeft" style="float: left; height: 430px;"></div>
+				<div id="cboxContent" style="float: left; width: 600px; height: 430px;">
+					<div id="cboxTitle" style="float: left; display: none;"></div>
+					<div id="cboxCurrent" style="float: left; display: none;"></div>
+					<button type="button" id="cboxPrevious" style="display: none;"></button>
+					<button type="button" id="cboxNext" style="display: none;"></button>
+					<button id="cboxSlideshow" style="display: none;"></button>
+					<div id="cboxLoadingOverlay" style="float: left;"></div>
+					<div id="cboxLoadingGraphic" style="float: left;"></div>
+					<button type="button" id="cboxClose">close</button>
+				</div>
+				<div id="cboxMiddleRight" style="float: left; height: 430px;"></div>
+			</div>
+			<div style="clear: left;">
+				<div id="cboxBottomLeft" style="float: left;"></div>
+				<div id="cboxBottomCenter" style="float: left; width: 600px;"></div>
+				<div id="cboxBottomRight" style="float: left;"></div>
+			</div>
+		</div>
+		<div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
+	</div>
+</body>
+<!-- Mirrored from www.gavakari.in/epaper/edition/564/gavakari-18-april-2020 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2020 08:40:25 GMT -->
+
+</html>

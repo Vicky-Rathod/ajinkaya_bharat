@@ -1,0 +1,1526 @@
+{% load staticfiles %}
+{% load static %}
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=IE9,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>
+      AjinkyaBharat epaper:Online Marathi ePaper | Marathi News ePaper | Today's
+      Marathi Newspaper
+    </title>
+    <meta
+      name="description"n
+      content="Ajinkyabharat is Marathi daily newspaper distributed in the stateRead more....
+	Ajinkyabharat The newspaper is has 2 editions Akola Edition, Buldhana Editio. Ajinkyabharat known for publishing news.It is a right leading newspaper"
+    />
+    <meta
+      name="keywords"
+      content="AjinkyaBharat  epaper | AjinkyaBharat  Marathi epaper | AjinkyaBharat  Marathi daily newspaper "
+    />
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177185251-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-177185251-1');
+</script>
+
+
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+    <script src="{% static 'node_modules/maphilight/jquery.maphilight.min.js' %}"></script>
+    <script src="{% static 'js/photoslider.js' %}"></script>
+    <!-- <script src="{% static 'js/vendor/jquery.ui.widget.js' %}"></script> -->
+  <!-- <script src="{% static 'jquery.iframe-transport.js' %}"></script>
+    <script src="{% static 'js/jquery.fileupload.js' %}"></script> -->
+    <!-- The File Upload processing plugin -->
+    <!-- <script src="{% static 'js/jquery.fileupload-process.js' %}"></script> -->
+    <!-- The File Upload image preview & resize plugin -->
+    <!-- <script src="{% static 'js/jquery.fileupload-image.js' %}"></script> -->
+    <!-- The File Upload audio preview plugin -->
+    <!-- <script src="{% static 'js/jquery.fileupload-audio.js' %}"></script> -->
+    <!-- The File Upload video preview plugin -->
+    <!-- <script src="{% static 'js/jquery.fileupload-video.js' %}"></script> -->
+    <!-- The File Upload validation plugin -->
+    <!-- <script src="{% static 'js/jquery.fileupload-validate.js' %}"></script>
+    <script src="{% static 'js/jquery.fileupload-ui.js' %}"></script>
+    <script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script> -->
+
+<script>
+      var base_url = "http://127.0.0.1:8000";
+      var slider;
+      var all_pages = [];
+ var $ = jQuery;
+      // function trigger_datepicker() {
+      //   $(".ui-datepicker-trigger").trigger("click");
+      // }
+
+      function close_modal() {
+        var $ = jQuery;
+        $(".close").trigger("click");
+      }
+// $(function(){
+//     var $ = jQuery;
+//     $(".small-images a").click(function(e){
+//         var href = $(this).attr("href");
+//         $("#big-image img").attr("src", href);
+//         e.preventDefault();
+//         return false;
+//     });
+// });
+      // function getNews(date) {
+      //   $.loader({
+      //     className: "blue-with-image-2",
+      //     content: "Please wait...",
+      //   });
+      //   let url = base_url + "/media/pdf/Akola/2020/08/07/";
+      //   let data = { epaper_date: date };
+      //   $.post(url, data, function (response, status) {
+      //     $.loader("close");
+      //     if (response.status == "success") {
+      //       let pages = response.data;
+      //       all_pages = pages;
+      //       $(".page_thumbnails").empty();
+      //       if (pages.length > 0) {
+      //         $(".page_thumbnails").append(
+      //           "<h4 class='text-center' style='text-decoration:none;color:#ef601e;'>Select page to read...</h4>"
+      //         );
+      //       }
+
+      //       for (var i = 0; i < pages.length; i++) {
+      //         let page = pages[i];
+      //         let news_blocks = page.news_blocks;
+      //         page = page.page;
+
+      //         let page_thumbnails =
+      //           "<div style='display:inline-block;width:80px;color:#ef601e'><img id='slide_" +
+      //           (i + 1) +
+      //           "' class='img img-fluid page_thumbnail' style='max-width:35px;' src='" +
+      //           base_url +
+      //           page.page_image +
+      //           "' onclick='switchSlide(" +
+      //           i +
+      //           ")' /> <p> Page " +
+      //           page.page_no +
+      //           "</p></div>";
+      //         $(".page_thumbnails").append(page_thumbnails);
+      //       }
+
+      //       switchSlide(0);
+      //     } else {
+      //     }
+      //   });
+      // }
+//       function showInModal(element)
+// 	{
+//     var $ = jQuery;
+// 		var src=$(element).attr("image_url");
+// 		$('#img_loader').show();
+// 		$('#news_block_image').hide();
+// 		$('#news_block_image').attr('src',src);
+// 		$('#download_image').attr('href',src);
+
+// 		$('#facebook_share').attr('href',"https://facebook.com/sharer/sharer.php?u="+src)
+// 		$('#twitter_share').attr('href',"https://twitter.com/share?url="+src)
+// 		//$('#google_share').attr('href',"https://plus.google.com/share?url="+src)
+// 		if(isMobile())
+// 		{
+// 			$('#whatsapp_share').attr('href',"whatsapp://send?text="+src)
+// 		}
+// 		else
+// 		{
+// 			$('#whatsapp_share').attr('href',"javascript:void(0)")
+// 		}
+
+// 		$('#modal1').modal('show');
+
+
+
+// 		// main image loaded ?
+// 		$('#news_block_image').on('load', function(){
+// 		  $('#img_loader').hide();
+// 		  $('#news_block_image').show();
+// 		});
+// 	}
+
+//       //function showPage(index)
+
+//       function switchSlide(index) {
+//         var $ = jQuery;
+//         $(".page_thumbnail").each(function () {
+//           if ($(this).hasClass("active_slide")) {
+//             $(this).removeClass("active_slide");
+//           }
+//         });
+//         $("#slide_" + (index + 1)).addClass("active_slide");
+//         displayPage(index);
+//       }
+
+
+//       function displayPage(index) {
+//         var $ = jQuery;
+//         $("map").imageMapResize();
+
+//             // uncomment this line for normal hover highlighting
+//             //$('.map').maphilight();
+
+//       }
+//       function isMobile() {
+// 	  var check = false;
+// 	  (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
+// 	  return check;
+// 	}
+   </script>
+   <script>
+   $(document).ready(function() {
+    var $ = jQuery;
+  $('.map_image').maphilight(
+    {
+            fillColor: 'ff2e00'
+        }
+  );
+});
+   </script>
+ <script>
+  $.noConflict();
+  // Code that uses other library's $ can follow here.
+  </script>
+    <link rel="stylesheet" href="{% static 'node_modules/cropperjs/dist/cropper.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/app/main.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static 'css/app/views/demo.css' %}" /> -->
+
+    <style>
+    @media screen and (max-width: 767px) {
+    .secnav{
+        display:none;
+    }
+
+
+
+    }
+    @media screen and (max-width: 767px) {
+     #news_pages{
+        display:none;
+    }
+    }
+      #id_clipimage{
+        display: none;
+      }
+      img {
+        transition: opacity 0.3s ease-in;
+      }
+      .Newtabs li a:hover,
+      .Newtabs li a:focus {
+        color: white;
+        background-color: #ff5722;
+      }
+      .ed-title span {
+        background: #030303 none repeat scroll 0 0;
+        bottom: 0;
+        color: #fff;
+        /* float: left; */
+        font-weight: bold;
+        font-size: 12px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        overflow: hidden;
+        padding: 5px 15px;
+        position: relative;
+        text-align: center;
+        width: 100%;
+      }
+      #modal-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 100;
+      }
+      #modal-bg a {
+        display: block;
+        margin-top: 10px;
+      }
+      #modal-close-btn {
+        position: fixed;
+        top: 0px;
+        right: 5px;
+        width: 32px;
+        padding: 0px 5px;
+        height: 32px;
+        color: white;
+        background: black;
+        font-size: 23px;
+        text-shadow: 0 1px 2px #333;
+        z-index: 999;
+      }
+      ul.tabs li {
+        width: 105%;
+    margin-left: -31px;
+    background: black;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    float: left;
+    text-align: center;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 13px;
+    text-decoration: none;
+    font-size: 11px;
+    padding: 4px 47px 5px 0px;
+    cursor: pointer;
+}
+      .thumbnl {
+        padding: 10px 10px !important;
+        text-align: center;
+        color: white;
+
+        cursor: pointer;
+        font-family: "Open Sans", sans-serif !important;
+        font-size: 13px;
+        text-transform: none !important;
+        font-weight: bold;
+        /* line-height: 23px; */
+        text-decoration: none;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+      }
+      .text-center.affix {
+        top: 0px;
+        position: fixed;
+        background-color: #efefef;
+        width: 100% !important;
+      }
+      .logo_head {
+        background-color: #ffffff !important;
+        box-shadow: 4px 2px 17px 2px rgba(187, 187, 187, 0.4);
+        float: left;
+        width: 100% !important;
+      }
+      .page-heading,
+      #mainmenu,
+      .title-header {
+        background-color: #af0f14;
+      }
+      .logo_main {
+        float: left;
+        padding: 10px 0px 8px;
+        width: 20%;
+      }
+      .logo_cls {
+        float: left;
+        width: 100%;
+      }
+      .logo_main a {
+        float: left;
+        width: 100%;
+      }
+      .logo_main a img {
+        width: 100%;
+        padding-top: 15px;
+      }
+      #mainmenu {
+        border-top-color: #af0f14;
+      }
+      .navbar-right {
+        float: left !important;
+        margin-left: 13%;
+      }
+      .scrolltop {
+        display: none;
+        width: 100%;
+        margin: 0 auto;
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+      }
+      .scroll {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        background: #b2b2b2;
+        background: rgba(178, 178, 178, 0.7);
+        padding: 20px;
+        text-align: center;
+        margin: 0 0 0 0;
+        cursor: pointer;
+        transition: 0.5s;
+        -moz-transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+      }
+      .scroll:hover {
+        background: rgba(178, 178, 178, 1);
+        transition: 0.5s;
+        -moz-transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+      }
+      .scroll:hover .fa {
+        padding-top: -10px;
+      }
+      .scroll .fa {
+        font-size: 30px;
+        margin-top: -5px;
+        margin-left: 1px;
+        transition: 0.5s;
+        -moz-transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+      }
+      .header-ad {
+        margin: 10px 0;
+      }
+
+      @media screen and (max-width: 767px) {
+        #fbbtn,
+        PrintImg,
+        #zoomIn,
+        #zoomOut,
+        #share_link {
+          display: none;
+        }
+        .article-content {
+          width: 100% !important;
+          margin: 0 !important;
+          margin-top: 30px !important;
+        }
+        #mydata1 {
+          margin-right: 0 !important;
+        }
+        .logo_main {
+          width: 100%;
+          text-align: center;
+        }
+        .logo_main a img {
+          width: auto;
+          height: 60px;
+        }
+        .img-section {
+          background: none !important;
+          margin: 10px 0 !important;
+          border: 1px solid #ddd;
+          border-radius: 0 !important;
+        }
+        .img-section img {
+          width: 100% !important;
+        }
+        .img-section ul {
+          background: #fff !important;
+          margin-top: 0px !important;
+          margin-bottom: 0px !important;
+          padding: 5px 25px !important;
+          border-radius: 0 !important;
+        }
+      }
+
+      .slideshow1_thumbs{
+                background-color: #fff;
+                            height: 642px;
+                            margin-top: 10px;
+                            width: 100%;
+                            border-color: #ddd;
+                            border-style: solid;
+                            border-width: 0 1px;
+                            overflow: auto;
+                            text-align: center;
+            }
+
+#main-content-container{padding-left:0;padding-right:0;position:relative}
+#main-row-content{display:table;width:100%;min-height:900px}
+
+.btn-circle-lg {
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  margin:0 auto;
+}
+
+.docs-buttons .btn-group {
+  margin: 5px 2px;
+}
+
+
+
+    </style>
+<!--
+    <script>
+      function triggerDatepicker() {
+        $("#datepicker").datepicker("show");
+      }
+      $(function () {
+
+// Demo
+// ----------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
+
+$('a.back-to-top').on('click', function (e) {
+    e.preventDefault();
+
+    $('html, body').stop().animate({
+        scrollTop: $('html, body').offset().top
+    }, 1000);
+});
+
+// Toggle thumbnails
+// ----------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
+
+
+});
+
+
+
+
+
+    </script> -->
+
+    <!-- <script>
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 300) {
+            $(".scrolltop:hidden").stop(true, true).fadeIn();
+          } else {
+            $(".scrolltop").stop(true, true).fadeOut();
+          }
+        });
+        $(function () {
+          $(".scroll").click(function () {
+            $("html,body").animate({ scrollTop: 0 }, "1000");
+            return false;
+          });
+        });
+      });
+    </script>   Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=UA-121887941-1"
+    ></script> -->
+    <!-- <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-121887941-1");
+    </script> -->
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5ef245dd0ef96600120c1cd5&product=inline-share-buttons" async="async"></script>
+<script>
+// window.onload = function () {
+//   'use strict';
+
+//   var Cropper = window.Cropper;
+//   var URL = window.URL || window.webkitURL;
+//   var container = document.querySelector('.desoslide-wrapper');
+//   var image = container.getElementsByTagName('img').item(0);
+//   var download = document.getElementById('download');
+//   var actions = document.getElementById('actions');
+//   var dataX = document.getElementById('dataX');
+//   var dataY = document.getElementById('dataY');
+//   var dataHeight = document.getElementById('dataHeight');
+//   var dataWidth = document.getElementById('dataWidth');
+//   var dataRotate = document.getElementById('dataRotate');
+//   var dataScaleX = document.getElementById('dataScaleX');
+//   var dataScaleY = document.getElementById('dataScaleY');
+//   var options = {
+//     aspectRatio: 16 / 9,
+//     preview: '.img-preview',
+//     ready: function (e) {
+//       console.log(e.type);
+//     },
+//     cropstart: function (e) {
+//       console.log(e.type, e.detail.action);
+//     },
+//     cropmove: function (e) {
+//       console.log(e.type, e.detail.action);
+//     },
+//     cropend: function (e) {
+//       console.log(e.type, e.detail.action);
+//     },
+//     crop: function (e) {
+//       var data = e.detail;
+
+//       console.log(e.type);
+//       dataX.value = Math.round(data.x);
+//       dataY.value = Math.round(data.y);
+//       dataHeight.value = Math.round(data.height);
+//       dataWidth.value = Math.round(data.width);
+//       dataRotate.value = typeof data.rotate !== 'undefined' ? data.rotate : '';
+//       dataScaleX.value = typeof data.scaleX !== 'undefined' ? data.scaleX : '';
+//       dataScaleY.value = typeof data.scaleY !== 'undefined' ? data.scaleY : '';
+//     },
+//     zoom: function (e) {
+//       console.log(e.type, e.detail.ratio);
+//     }
+//   };
+//   var cropper = new Cropper(image, options);
+//   var originalImageURL = image.src;
+//   var uploadedImageType = 'image/jpeg';
+//   var uploadedImageName = 'cropped.jpg';
+//   var uploadedImageURL;
+
+//   // Tooltip
+//   $('[data-toggle="tooltip"]').tooltip();
+
+//   // Buttons
+//   if (!document.createElement('canvas').getContext) {
+//     $('button[data-method="getCroppedCanvas"]').prop('disabled', true);
+//   }
+
+//   if (typeof document.createElement('cropper').style.transition === 'undefined') {
+//     $('button[data-method="rotate"]').prop('disabled', true);
+//     $('button[data-method="scale"]').prop('disabled', true);
+//   }
+dataType:"json",
+
+//   // Methods
+
+
+//   document.body.onkeydown = function (event) {
+//     var e = event || window.event;
+
+//     if (e.target !== this || !cropper || this.scrollTop > 300) {
+//       return;
+//     }
+
+//     switch (e.keyCode) {
+//       case 37:
+//         e.preventDefault();
+//         cropper.move(-1, 0);
+//         break;
+
+//       case 38:
+//         e.preventDefault();
+//         cropper.move(0, -1);
+//         break;
+
+//       case 39:
+//         e.preventDefault();
+//         cropper.move(1, 0);
+//         break;
+
+//       case 40:
+//         e.preventDefault();
+//         cropper.move(0, 1);
+//         break;
+//     }
+//   };
+
+//   // Import image
+//   var inputImage = image;
+
+//   if (URL) {
+//     inputImage.onchange = function () {
+//       var files = this.files;
+//       var file;
+
+//       if (cropper && files && files.length) {
+//         file = files[0];
+
+//         if (/^image\/\w+/.test(file.type)) {
+//           uploadedImageType = file.type;
+//           uploadedImageName = file.name;
+
+//           if (uploadedImageURL) {
+//             URL.revokeObjectURL(uploadedImageURL);
+//           }
+
+//           image.src = originalImageURL = URL.createObjectURL(file);
+//           cropper.destroy();
+//           cropper = new Cropper(image, options);
+//           inputImage.value = null;
+//         } else {
+//           window.alert('Please choose an image file.');
+//         }
+//       }
+//     };
+//   } else {
+//     inputImage.disabled = true;
+//     inputImage.parentNode.className += ' disabled';
+//   }
+// };
+
+
+
+jQuery(document).ready(function() {
+  var $ = jQuery;
+var cropper;
+var originalImageURL;
+
+// Tooltip
+$('[data-toggle=tooltip]').tooltip({container:'body'});
+
+$('#myModal').on('shown.bs.modal', function(e) {
+  init_cropper('{{page1}}');
+})
+
+$('#myModal').on('hidden.bs.modal', function(e) {
+  cropper.destroy();
+})
+
+function init_cropper(srcimg) {
+
+  var Cropper = window.Cropper;
+  var URL = window.URL || window.webkitURL;
+  var options;
+  var image = document.getElementById('src-img');
+  var download =  document.getElementById('download');
+  var actions = document.getElementById('actions');
+  if (srcimg != null) {
+    image.src = srcimg;
+    var a  = document.createElement('a');
+
+  }
+
+  options = {
+    aspectRatio: NaN,
+    autoCrop: false,
+    dragMode: 'crop',
+    zoomOnWheel: false,
+    ready: function(e) {},
+  };
+
+  cropper = new Cropper(image, options);
+  originalImageURL = image.src;
+
+  // Methods
+  actions.querySelector('.docs-buttons').onclick = function(event) {
+    var e = event || window.event;
+    var target = e.target || e.srcElement;
+    var cropped;
+    var result;
+    var input;
+    var data;
+
+    if (!cropper) {
+      return;
+    }
+
+    data = {
+      method: target.getAttribute('data-method'),
+      target: target.getAttribute('data-target'),
+      option: target.getAttribute('data-option') || undefined,
+      secondOption: target.getAttribute('data-second-option') || undefined
+    };
+
+    console.log(data.method + ', ' + data.target + ', ' + data.option + ', ' + data.secondOption);
+
+    if (data.method) {
+
+      if (data.method == 'restore') {
+        try {
+          image.src = originalImageURL;
+          cropper.destroy();
+          cropper = new Cropper(image, options);
+        } catch (e) {
+          console.log(e.message);
+        }
+      } else {
+        result = cropper[data.method](data.option, data.secondOption);
+      }
+
+      switch (data.method) {
+        case 'rotate':
+          if (cropped) {
+            cropper.crop();
+          }
+
+          break;
+
+        case 'scaleX':
+        case 'scaleY':
+          target.setAttribute('data-option', -data.option);
+          break;
+
+        case 'getCroppedCanvas':
+          if (result) {
+            image.src = result.toDataURL();
+
+            cropper.destroy();
+            cropper = new Cropper(image, options);
+
+          }
+          break;
+
+      }
+
+
+switch (data.method) {
+  case 'rotate':
+    if (cropped) {
+      cropper.crop();
+    }
+
+    break;
+
+  case 'scaleX':
+  case 'scaleY':
+    target.setAttribute('data-option', -data.option);
+    break;
+
+  case 'getCroppedCanvas':
+    if (result) {
+      $('#id_clipimage').removeAttr('required')
+      // Bootstrap's Modal
+      var base64 = result.toDataURL('image/jpeg');
+      fetch(base64)
+.then(res => res.blob())
+.then(console.log)
+ function b64toBlob(b64Data, contentType, sliceSize) {
+        contentType = contentType || '';
+        sliceSize = sliceSize || 512;
+
+        var byteCharacters = atob(b64Data);
+        var byteArrays = [];
+
+        for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+            var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+            var byteNumbers = new Array(slice.length);
+            for (var i = 0; i < slice.length; i++) {
+                byteNumbers[i] = slice.charCodeAt(i);
+            }
+
+            var byteArray = new Uint8Array(byteNumbers);
+
+            byteArrays.push(byteArray);
+        }
+
+      var blob = new Blob(byteArrays, {type: contentType});
+      return blob;
+}
+
+       $('#id_clipimage').fileupload().file = abc;
+var url = "{% url 'dailyfeed' 1 %}";
+var abcd = result.toDataURL('image/jpeg');
+var base64ImageContent = abcd.replace(/^data:image\/(png|jpeg);base64,/, '');
+var blob = base64ToBlob(base64ImageContent, 'image/jpeg');
+
+var formData = new FormData();
+formData.append('clipimage', blob);
+
+$.ajax({
+    url: url,
+  //    data: {
+  //   csrfmiddlewaretoken: "{% csrf_token %}",
+  // },
+    type: "POST",
+    cache: false,
+    contentType: false,
+    processData: false,
+    data: formData})
+
+       $('#id_clipimage').fileupload('add', { files: [ abc ] });
+
+
+      $('#myForm').on('submit', function(e){
+                e.preventDefault();
+                appendFileAndSubmit();
+            });
+
+            function appendFileAndSubmit(){
+                // Get the form
+                var form = document.getElementById("myForm");
+
+                var ImageURL = result.toDataURL('image/jpeg') ;
+                // Split the base64 string in data and contentType
+                var block = ImageURL.split(";");
+                // Get the content type
+                var contentType = block[0].split(":")[1];// In this case "image/gif"
+                // get the real base64 content of the file
+                var realData = block[1].split(",")[1];// In this case "iVBORw0KGg...."
+
+                // Convert to blob
+                var blob = b64toBlob(realData, contentType);
+                console.log(blob);
+                // Create a FormData and append the file
+                var fd = new FormData(form);
+                fd.append('clipimage', blob);
+              console.log(fd)
+                // Submit Form and upload file
+                $.ajax({
+                    url:"{% url 'dailyfeed' 1 %}",
+                    data: fd,// the formData function is available in almost all new browsers.
+                    type:"POST",
+                    contentType:false,
+                    processData:false,
+                    cache:false,
+                    dataType:"text", // Change this according to your response from the server.
+                    error:function(err){
+                        console.error(err);
+                    },
+                    success:function(data){
+                        console.log(data);
+                    },
+                    complete:function(){
+                        console.log("Request finished.");
+                    }
+                });
+   }
+
+    }
+    break;
+  case 'destroy':
+    cropper = null;
+
+    if (uploadedImageURL) {
+      URL.revokeObjectURL(uploadedImageURL);
+      uploadedImageURL = '';
+      image.src = originalImageURL;
+    }
+
+    break;
+}
+
+
+      if (typeof result === 'object' && result !== cropper && input) {
+        try {
+          input.value = JSON.stringify(result);
+        } catch (e) {
+          console.log(e.message);
+        }
+      }
+    }
+  };
+
+
+};
+
+});
+
+
+</script>
+
+<script>
+// // Get the modal
+// var modal = document.getElementById("myModal");
+
+// // Get the image and insert it inside the modal - use its "alt" text as a caption
+// var img = document.getElementsByClassName("desoslide-wrapper");
+// var modalImg = document.getElementById("img01");
+//     var captionText = document.getElementById("caption");
+//     modalImg.onclick = function () {
+//         modal.style.display = "block";
+//         modalImg.src = this.src;
+//         captionText.innerHTML = this.alt;
+//     }
+
+//     // Get the <span> element that closes the modal
+//     var span = document.getElementsByClassName("close")[0];
+
+//     // When the user clicks on <span> (x), close the modal
+//     span.onclick = function () {
+//         modal.style.display = "none";
+//     }
+</script>
+  </head>
+  <body cz-shortcut-listen="true">
+
+    <nav class="navbar-default logo_head">
+	  <div  style="width: 100%;">
+		<div class="row">
+        <div class="col-sm-3  site-logo ">
+
+            <a href="">
+              <img  class ="rounded float-left"style = "display: block; width: 80%;"
+                alt="Ajinkyabharat"
+                src="{% static 'images/MATLOGO.jpeg' %}"
+              />
+            </a>
+          </div>
+        </div>
+	</div>
+
+
+
+    </nav>
+    <nav class="navbar navbar-expand-sm   navbar-light " style="background-color: black;">
+      <a class="navbar-brand" href="{% url 'city'  %}" style="color: white;">{{date}}</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDekmo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+        <div class="sharethis-inline-share-buttons" style="margin-top: 10px;"></div>
+      </div>
+    </nav>
+
+    <section id="section_demo">
+
+      <div class="col-md-3 d-none">
+        <!-- <h3>Preview:</h3> -->
+        <div class="docs-preview clearfix">
+          <div class="img-preview preview-lg"></div>
+          <div class="img-preview preview-md"></div>
+          <div class="img-preview preview-sm"></div>
+          <div class="img-preview preview-xs"></div>
+        </div>
+
+        <!-- <h3>Data:</h3> -->
+        <div class="docs-data">
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataX">X</label>
+            </span>
+            <input type="text" class="form-control" id="dataX" placeholder="x">
+            <span class="input-group-append">
+              <span class="input-group-text">px</span>
+            </span>
+          </div>
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataY">Y</label>
+            </span>
+            <input type="text" class="form-control" id="dataY" placeholder="y">
+            <span class="input-group-append">
+              <span class="input-group-text">px</span>
+            </span>
+          </div>
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataWidth">Width</label>
+            </span>
+            <input type="text" class="form-control" id="dataWidth" placeholder="width">
+            <span class="input-group-append">
+              <span class="input-group-text">px</span>
+            </span>
+          </div>
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataHeight">Height</label>
+            </span>
+            <input type="text" class="form-control" id="dataHeight" placeholder="height">
+            <span class="input-group-append">
+              <span class="input-group-text">px</span>
+            </span>
+          </div>
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataRotate">Rotate</label>
+            </span>
+            <input type="text" class="form-control" id="dataRotate" placeholder="rotate">
+            <span class="input-group-append">
+              <span class="input-group-text">deg</span>
+            </span>
+          </div>
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataScaleX">ScaleX</label>
+            </span>
+            <input type="text" class="form-control" id="dataScaleX" placeholder="scaleX">
+          </div>
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataScaleY">ScaleY</label>
+            </span>
+            <input type="text" class="form-control" id="dataScaleY" placeholder="scaleY">
+          </div>
+        </div>
+      </div>
+      <div id ="main-content-container"class="container-fluid" style="width: 100%;float:left;margin-top:10px;margin-bottom:200px;">
+
+          <!-- Demo 1 -->
+
+          <div id ="main-row-content" class="row">
+
+              <!-- Result 1 -->
+              <div class="col-lg-12 mb-4 secnav" >
+                <div class="bg-white p-4 rounded shadow-sm h-100" align="center" style="padding-left:10px;margin-left: 10px;">
+
+                  <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="gridSystemModalLabel">Clip Image</h4>
+                        </div>
+                        <div class="modal-body">
+
+                          <div class="row">
+                            <div class="col-md-9">
+                              <!-- <h3>Demo:</h3> -->
+                              <div class="top-container">
+                                <div class="img-container"style="margin-left:75px">
+                                  <img id="src-img" class="img-responsive">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div id="actions">
+                              <div class="col-md-12 docs-buttons">
+                                <!-- <h3>Toolbar:</h3> -->
+
+                                <div class="btn-group">
+                                  <button type="button" class="btn btn-primary" data-method="getCroppedCanvas" data-toggle="tooltip" title="Clip">
+                                    <span class="fa fa-check"></span>
+                                  </button>
+                                  <button type="button" class="btn btn-primary" data-method="clear" data-toggle="tooltip" title="Cancel">
+                                    <span class="fa fa-remove"></span>
+                                  </button>
+                                  <button type="button" class="btn btn-primary" data-method="restore" data-toggle="tooltip" title="Restore">
+                                    <span class="fa fa-refresh"></span>
+                                  </button>
+                                </div>
+
+
+                              </div>
+                              <!-- /.docs-buttons -->
+
+                            </div>
+
+
+                          </div>
+                        </div>
+                        <!-- modal body -->
+
+                        <div class="modal-footer">
+                          <form id="myForm" role="form"  method="post" enctype="multipart/form-data">
+
+                            {{ backendform.clipimage }}
+                            <input type="submit" value="Clip">
+                          <!-- <div class="btn-group btn-group-crop">
+                            <a class="btn btn-primary" type="submit">Download</a>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">
+                              Cancel
+                            </button>
+                          </div> -->
+                        </form>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- lg circle buttons-->
+                  <button class="btn btn-dark btn-circle btn-circle-lg m-1"><i class="fa fa-arrow-left fa-2x"></i></button>
+                  <button class="btn btn-dark btn-circle btn-circle-lg m-1"><i class="fa fa-arrow-right fa-2x"></i></button>
+                  <button class="btn btn-dark btn-circle btn-circle-lg m-1" data-toggle="modal" data-target="#myModal" title="Zoom Out">
+                    <span class="fa fa-scissors fa-2x " ></span>
+                  </button>
+                  <button class="btn btn-dark btn-circle btn-circle-lg m-1">  <span class="docs-tooltip" data-toggle="tooltip" title="cropper.clear()"></span>
+                    <span class="fa fa-tags fa-2x"></span></button>
+                  <button class="btn btn-dark btn-circle btn-circle-lg m-1"><i class="fa fa-sliders fa-2x"></i></button>
+                  <button class="btn btn-dark btn-circle btn-circle-lg m-1" id="myImg"><i class="fa fa-search-plus fa-2x"></i></button>
+                  <button class="btn btn-dark btn-circle btn-circle-lg m-1"><i class="fa fa-search-minus fa-2x"></i></button>
+
+                </div>
+                <div id="myModal" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img01" src="{{page1}}">
+                  <div id="caption">Page1</div>
+                </div>
+              </div>
+
+                  <div class="row">
+
+                      <div class="col-lg-2 col-md-2" style="vertical-align: top;width: 300px; display: table-cell; padding: 0px 10px; margin-right: 46px;
+                      margin-left: 39px;">
+                      <div class="small-images" style="background-color: white;
+                      height: 600px;
+                      width: 100%;
+                      border-color: #ddd;
+                      border-style: solid;
+                      border-width: 0 1px;
+                      overflow: auto;
+                      text-align: center;">
+      <a href="{{page1}}">  <div
+                      style="
+                            text-decoration: none;
+    display: block;
+    margin: 10px 0;
+                      "
+                    >
+                      <img
+                        id="slide_1"
+                        class="img img-fluid "
+                        style="padding: 9px;width: 150px;
+    height: 213px;border: 1px solid #ddd;"
+                        src="{{page1}}"
+
+                      />
+                      <p>Page 1</p>
+                    </div>
+                    </a>
+
+                    <a href="{{page2}}">
+                    <div
+                      style="
+                            text-decoration: none;
+    display: block;
+    margin: 10px 0;
+                      "
+                    >
+                      <img
+                        id="slide_2"
+                        class="img img-fluid "
+                        style="padding: 9px;width: 150px;
+    height: 213px;border: 1px solid #ddd;"
+                        src="{{page2}}"
+
+                      />
+                      <p>Page 2</p>
+                    </div>
+                    </a>
+                      <a href="{{page3}}">
+
+                    <div
+                      style="
+                            text-decoration: none;
+    display: block;
+    margin: 10px 0;
+                      "
+                    >
+                      <img
+                        id="slide_3"
+                        class="img img-fluid "
+                        style="padding: 9px;width: 150px;
+    height: 213px;border: 1px solid #ddd;"
+                        src="{{page3}}"
+
+                      />
+                      <p>Page 3</p>
+                    </div>
+                    </a>
+                      <a href="{{page4}}">
+                    <div
+                      style="
+                            text-decoration: none;
+    display: block;
+    margin: 10px 0;
+                      "
+                    >
+                      <img
+                        id="slide_4"
+                        class="img img-fluid "
+                        style="padding: 9px;width: 150px;
+    height: 213px;border: 1px solid #ddd;"
+                        src="{{page4}}"
+
+                      />
+                      <p>Page 4</p>
+                    </div>
+                    </a>
+
+                  <a href="{{page5}}">
+                    <div
+                      style="
+                            text-decoration: none;
+    display: block;
+    margin: 10px 0;
+                      "
+                    >
+                      <img
+                        id="slide_5"
+                        class="img img-fluid "
+                        style="padding: 9px;width: 150px;
+    height: 213px;border: 1px solid #ddd;"
+                        src="{{page5}}"
+
+                      />
+                      <p>Page 5</p>
+                    </div>
+                    </a>
+                      <a href="{{page6}}">
+                    <div
+                      style="
+                            text-decoration: none;
+    display: block;
+    margin: 10px 0;
+                      "
+                    >
+                      <img
+                        id="slide_6"
+                        class="img img-fluid "
+                        style="padding: 9px;width: 150px;
+    height: 213px;border: 1px solid #ddd;"
+                        src="{{page6}}"
+
+                      />
+                      <p>Page 6</p>
+                    </div>
+</a>
+      <a href="{{page7}}">
+                          <div
+                      style="
+                            text-decoration: none;
+    display: block;
+    margin: 10px 0;
+                      "
+                    >
+                      <img
+                        id="slide_7"
+                        class="img img-fluid "
+                        style="padding: 9px;width: 150px;
+    height: 213px;border: 1px solid #ddd;"
+                        src="{{page7}}"
+
+                      />
+                      <p>Page 7</p>
+                    </div>
+          </a>
+            <a href="{{page8}}">
+                    <div
+                      style="
+                            text-decoration: none;
+    display: block;
+    margin: 10px 0;
+                      "
+                    >
+                      <img
+                        id="slide_8"
+                        class="img img-fluid "
+                        style="padding: 9px;width: 150px;
+    height: 213px;border: 1px solid #ddd;"
+                        src="{{page8}}"
+
+                      />
+                      <p>Page 8</p>
+                    </div>
+</a>
+                      </div>
+
+                      <div id="sidebar-ads" style="width: 320px; display: table-cell; padding: 0px 10px;" class="hidden-xs hidden-sm">
+                        <div style="height:936px;margin:0 auto;">
+                                   <div style="width:100%;float:left;margin-top:16px;margin-bottom:10px;text-align:center;">
+                           <!-- /21854674376/lok-ep-d-ps-300x600 -->
+                           <div id="div-gpt-ad-1571083560014-0">
+                           </div>
+                            </div>
+                                   <div style="width:100%;float:left;margin-top:16px;margin-bottom:10px;text-align:center;">
+                             <!-- /21854674376/lok-ep-d-sbr-300x250 -->
+                               <div id="div-gpt-ad-1571083689327-0">
+                               </div>
+                                     </div>
+                     </div>
+                 </div>
+                  </div>
+                  <div class="row">
+                    <div id="news_pages" class="col-md-12">
+                      <div  id="big-image"
+                        class="img img-fluid img-responsive "
+                        style="
+                          display: block;
+                          background-image: url('{{page1}}');
+                          background-size: contain;
+                          position: relative;
+                          padding: 0px;
+                          width: 945px;
+                          height: 1509px;
+                        "
+                       >
+
+
+                      </div>
+                      <!--<map name="newspaper"-->
+                      <!--  ><area-->
+                      <!--    class="news_block_area"-->
+                      <!--    onclick="showInModal(this)"-->
+                      <!--    shape="rect"-->
+                      <!--    coords="582,1194,934,1472"-->
+                      <!--    image_url="{%static 'images/04.jpg' %}"-->
+                      <!--    alt="Click here to read news..." /><area-->
+                      <!--    class="news_block_area"-->
+                      <!--    onclick="showInModal(this)"-->
+                      <!--    shape="rect"-->
+                      <!--    coords="135,181,700,515"-->
+                      <!--    image_url="{% static 'images/01.jpg' %}"-->
+                      <!--    alt="Click here to read news..." /><area-->
+                      <!--    class="news_block_area"-->
+                      <!--    onclick="showInModal(this)"-->
+                      <!--    shape="rect"-->
+                      <!--    coords="472,845,806,1193"-->
+                      <!--    image_url="{% static 'images/03.jpg' %}"-->
+                      <!--    alt="Click here to read news..." /><area-->
+                      <!--    class="news_block_area"-->
+                      <!--    onclick="showInModal(this)"-->
+                      <!--    shape="rect"-->
+                      <!--    coords="130,1199,360,842"-->
+                      <!--    image_url="{% static 'images/02.jpg' %}"-->
+                      <!--    alt="Click here to read news..."-->
+                      <!--/></map>-->
+                    </div>
+                  </div>
+          </div>
+
+    <div class="scrolltop" style="display: block;">
+      <div class="scroll icon"><i class="fa fa-4x fa-angle-up"></i></div>
+    </div>
+  </div>
+
+    </section>
+    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content modal-content-one">
+          <div class="modal-header">
+            <div class="modal-title" id="myModalLabel">
+              <img class="img img-responsive" width="200px" style="width: 33%; margin-left: 173px;" src="{% static '/images/MATLOGO.jpeg' %}">
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="col-md-2 col-sm-6 col-xs-12 text-center" style="border-right: solid 1px #acacac;">
+                  <a href="javascript:void(0);" onclick="printNews();" class="modal_buttons"><i class="fa fa-print"></i></a>
+                </div>
+                <div class="col-md-2 col-sm-6 col-xs-12 text-center" style="border-right: solid 1px #acacac;">
+                  <a href="javascript:void(0);" download="" id="download_image" class="modal_buttons"><i class="fa fa-download"></i> </a>
+                </div>
+                <div class="col-md-2  col-sm-6 col-xs-12 text-center" style="border-right: solid 1px #acacac;">
+                  <a href="javascript:void(0);" target="_blank" class="facebook modal_buttons" id="facebook_share" style="color: #3b5998;"><i class="fa fa-facebook"></i></a>
+                </div>
+                <div class="col-md-2  col-sm-6 col-xs-12 text-center" style="border-right: solid 1px #acacac;">
+                  <a href="javascript:void(0);" target="_blank" class="twitter modal_buttons" id="twitter_share" style="color: #00aced;"><i class="fa fa-twitter"></i> </a>
+                </div>
+                <div class="col-md-2  col-sm-6 col-xs-12 text-center" style="border-right: solid 1px #acacac;">
+                  <a href="javascript:void(0);" class="whatsapp modal_buttons" id="whatsapp_share" style="color: #1f7d1e;"><i class="fa fa-whatsapp"></i> </a>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="modal-body text-center" id="modal_content">
+
+            <img class="img img-fluid" id="img_loader" src="https://epaper.janmadhyam.com/assets/img/ajax-loader.gif">
+            <img class="img img-fluid" id="news_block_image" style="max-width: 100%">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <style>
+
+body{padding-top:0;background-color:#efefef}body.viewer{font-family:open sans,sans-serif}ul li{font-size:14px!important}#modal-bg{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.4);z-index:100}#modal-close-btn{position:fixed;top:0;right:0;width:24px;height:24px;color:#fff;font-size:20px;text-shadow:0 1px 2px #333;z-index:105}#main-content-container{padding-left:0;padding-right:0;position:relative}#subed-thumbs{background-color:#fff;height:907px;width:100%;border-color:#ddd;border-style:solid;border-width:0 1px;overflow:auto;text-align:center}#main-row-content{display:table;width:100%;min-height:900px}#page-bottom{max-width:970px;margin:0 auto}#top-container,.container-fluid{position:relative}#titles-search{padding:4px 12px;border-radius:16px;border:none;box-shadow:inset 0 0 1px 1px rgba(144,144,144,.6);border:1px solid #aaa;margin-left:5px;color:#333;font-weight:400;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}#titles-search:focus{border-color:#66afe9;outline:0;box-shadow:0 1px 1px rgba(0,0,0,.075) inset,0 0 8px rgba(102,175,233,.6)}#titles-btn-group{margin:0 0 5px 5px}#titles-btn-group .sep{line-height:34px;font-weight:700}.panel-section-link{width:100%;float:left;text-align:left;padding:10px;border-bottom:1px solid #eee;text-decoration:none;color:#555}.panel-section-link i{margin:0 10px 0 0}.panel-section-link:hover{text-decoration:none}#myModalNorm .modal-dialog{margin:4% auto;width:80%}#myModalNorm .modal-content{border-radius:0;float:left;padding-bottom:1%;width:100%}#myModalNorm .modal-header{background:#f5f5f5;float:left;padding-bottom:10px!important;padding-top:10px!important;width:100%;text-align:center}#myModalNorm .modal-body{float:left;padding:0;width:100%}#myModalNorm .modal-footer{float:left;width:100%}#myModalNorm .modal-title{font-weight:600;line-height:33px}#myModalNorm .modal-header .close{margin-top:6px}#myModalNorm .modal-content{width:100%;float:left}#myModalNorm .input-group{border-bottom:4px solid #ddd}#myModalNorm #vs_searchresults{display:none;padding-bottom:10px}#myModalNorm .pgno-caption{background:#ddd none repeat scroll 0 0;bottom:0;color:#333;float:left;font-weight:700;overflow:hidden;padding:3px 0;position:absolute;text-align:center;width:100%}.ed-title span{background:#ddd none repeat scroll 0 0;bottom:0;color:#333;font-weight:700;overflow:hidden;padding:5px 15px;position:relative;text-align:center;width:100%}.arr-rght{border:none;color:#999;font-size:64px;opacity:1;position:absolute;right:-.5%;text-align:center;text-decoration:none;top:16%;width:36px;z-index:20;padding:125px 0}.arr-lef{border:none;color:#999;font-size:64px;opacity:1;position:absolute;left:-.5%;text-align:center;text-decoration:none;top:16%;width:36px;z-index:20;padding:125px 0}.page_div_hover{color:#999!important;border:1px solid #d3d3d3}.arr-rght:hover{color:#000!important}.arr-lef:hover{color:#000!important}.arr-rght:focus{color:#000}.arr-lef:focus{color:#000}.zoom_arrow_fixed{position:fixed;background:rgba(0,0,0,.5)!important;color:#fff!important;padding:25px 0!important;top:60%!important}.section_highlight{background:#cecece}#all_pages{width:100%;float:left;text-align:left;padding:10px;border-bottom:1px solid #eee;text-decoration:none;color:#555}#all_pages i{margin:0 10px 0 0}@media screen and (max-width:1024px){.side-ad-300-600{display:none}.side-ad-160-600{display:block!important}}h4,legend{font-size:16px}fieldset{margin:0 5px;padding:5px}
+
+
+      .Footer {
+        background-color: black;
+        color: #999;
+        font-size: 11px;
+        font-family: "Raleway", Arial, sans-serif;
+        padding: 5px 0;
+        text-align: center;
+        width: 100%;
+        float: left;
+      }
+      .Footer p {
+        font-weight: bold;
+        margin-bottom: 0;
+        padding: 0;
+      }
+
+    </style>
+
+    <footer class="Footer">
+      <p style="padding-top: 5px;">
+        For technical issues related to epaper call us on : +91 9168 958 888 or
+        email us on : dashsoftwareandtech@gmail.com
+      </p>
+      <p>
+        Ⓒ Copyrights
+        <script language="JavaScript" type="text/javascript">
+          now = new Date();
+          theYear = now.getYear();
+          if (theYear < 1900) theYear = theYear + 1900;
+          document.write(theYear);
+        </script>
+        2020 All rights reserved.
+      </p>
+
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6 hidden-xs">
+          <div class="panel with-nav-tabs panel-default">
+            <div class="panel-heading">
+              <ul class="nav nav-tabs">
+                <li class="active">
+                  <a href="#tab1default" data-toggle="tab">
+				  About Ajinkyabharat
+				  </a>
+                </li>
+                <!--<li class="dropdown"><a href="#tab2default" data-toggle="tab">
+				Contact US
+				</a></li>-->
+                <li class="dropdown">
+                  <a href="#tab4default" data-toggle="tab">Privacy policy</a>
+                </li>
+              </ul>
+            </div>
+            <div class="panel-body">
+              <div class="tab-content">
+                <div class="tab-pane fade in active" id="tab1default">
+                  AjinkyaBharat Multimedia Pvt. Ltd. is Media Group. AjinkyaBharat is
+                  Marathi Daily Newspaper in the Maharashtra. The Newspaper has
+                  2 Edition - Akola Edition, Buldhana Edition,
+                   It is right leading newspaper distributed
+                  in the vidharbha.<button class="accordion">Read more....
+				  </button>
+                  <div class="panels">
+                    <div class="entry-content">
+                      <p style="text-align: justify;">
+
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!--<div class="tab-pane fade" id="tab2default">To advertise on the site write to: <button class="accordion">Read more....
+				</button>
+							<div class="panels">
+
+	<pre><span><span style="font-family:trebuchet ms,helvetica,sans-serif;"><strong>CONTACT US</strong>
+	http://epaper.Ajinkyabharat.com/
+	</span></span></pre>
+
+									</div>
+							</div>-->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+      </div>
+    </div>
+    <div
+      id="ui-datepicker-div"
+      class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"
+    ></div>
+    <script src="{% static 'js/vendor/bootstrap/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'node_modules/cropperjs/dist/cropper.js' %}"></script>
+    <script src="{% static 'node_modules/jquery-cropper/dist/jquery-cropper.js' %}"></script>
+
+    <div id="fb-root" class="fb_reset">
+      <div style="position: absolute; top: -10000px; width: 0px; height: 0px;">
+        <div></div>
+      </div>
+    </div>
+  </body>
+
+</html>

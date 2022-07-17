@@ -1,0 +1,19 @@
+{
+  "name": "deshonnati",
+  "version": "1.0.0",
+  "description": "deshonnati files",
+  "main": "./deshonnati_app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vicky Rathod",
+  "license": "ISC",
+  "dependencies": {
+    "cropperjs": "^1.5.7",
+    "desoslide": "^2.2.0",
+    "jquery": "^3.5.1",
+    "jquery-cropper": "^1.0.1",
+    "lightslider": "^1.1.6",
+    "maphilight": "^1.4.0"
+  }
+}

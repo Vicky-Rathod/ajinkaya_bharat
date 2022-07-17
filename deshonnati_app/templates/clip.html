@@ -1,0 +1,339 @@
+{% load staticfiles %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajinkya Bharat</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" data-cfasync="false"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="{% static 'js/pinch-zoom.js' %}"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177185251-1"></script>
+    <link rel="stylesheet" href="{% static 'node_modules/cropperjs/dist/cropper.css' %}">
+
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5ef245dd0ef96600120c1cd5&product=inline-share-buttons" async="async"></script>
+<meta property="og:image" content="{{clip.clipimage.url}}" />
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-177185251-1');
+</script>
+
+
+    <style>
+    #id_clipimage {
+    display: none;
+}
+      ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+      			/*.swiper-container { margin: auto; padding-bottom: 0px !important; }
+			.swiper-slide {
+			text-align: center;
+			font-size: 18px;
+			background: #fff;
+
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			align-items: center;
+			}*/
+
+
+			/*.swiper-pagination-bullets {
+			display: none !important;
+			}
+			.swiper-zoom-container {
+			position: static !important;
+			}*/
+
+        .clearfix {
+    zoom: 1;
+}
+.clearfix, .container_24 {
+    zoom: 1;
+}
+      .vtouch_header {
+        z-index: 103 !important;
+      }
+      .vtouch_header {
+        background: #fff none repeat scroll 0 0;
+        border-bottom: none;
+        float: left;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+        /* overflow: hidden; */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24) !important;
+      }
+
+      html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+#de-container {
+    /* margin-top: 60px; */
+    position: absolute;
+    overflow: hidden;
+}
+
+div.pinch-zoom, div.pinch-zoom canvas, div.pinch-zoom img {
+    width: 100%;
+    -webkit-user-drag: none;
+}
+
+.chunkimg {
+    min-width: auto !important;
+}
+.zoom {
+			    position: fixed;
+			    bottom: 48px;
+			    z-index: 9999;
+			    float: right;
+			    right: 3%;
+			    padding: 10px 10px 0px 10px;
+			    background: rgba(0,0,0,0.8);
+			}
+			.zoom .ui-slider{
+				border-radius: 0px !important;
+				border:none !important;
+			}
+      ul, ol {
+    margin: 1em 0;
+    padding: 0 0 0 40px;
+        padding-left: 40px;
+}
+.bottom_nav_bared li {
+    width: 16.66% !important;
+    float: left;
+    border-left: 1px solid rgba(255,255,255,0.24);
+}
+.nav::before{
+    display: table;
+    content: " ";
+}
+.nav > li {
+    position: relative;
+    display: block;
+}
+ul, ol {
+    margin: 1em 0;
+    padding: 0 0 0 40px;
+        padding-left: 40px;
+}
+.bottom_nav_bared li .fa-scissors {
+    font-size: 24px;
+}
+
+.navbar-fixed-bottom i {
+    color: #fff !important;
+}
+#clip {
+    text-align: center;
+}
+.nav {
+    list-style: none;
+}
+.navbar-fixed-bottom {
+    bottom: 0;
+    margin-bottom: 0;
+    border-width: 1px 0 0;
+}
+.footer {
+    position:fixed;
+     bottom: 0;
+     width: 100%;
+     height: 60px;
+     background-color: #f5f5f5;
+     z-index: 11;
+    border-top: 1px solid transparent;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar{
+    border-top: 1px solid transparent;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.group-container{
+    padding:0;
+    height:100%;
+}
+
+.selectors, .block{
+    height:100%;
+    width:100%;
+}
+
+.selectors button{
+    border: 0;
+    border-radius: 0;
+    background-color: #f8f9fa !important;
+    width:25%;
+    margin-left: 0;
+}
+
+.selectors button:active{
+    border:0;
+}
+
+.selectors button:focus{
+    border:0;
+    outline: 0;
+    box-shadow: 0 0 0 0px;
+}
+
+.active, .selector-holder{
+    display: flex;
+    flex-direction: column;
+}
+
+.inactive{
+    display: none;
+}
+
+.selector-holder span{
+    font-size: 0.8rem;
+}
+
+/* Colors of the buttons*/
+.button-active, .selectors button:hover, .selectors button:active, .selectors button:focus{
+    color: #ff0000;
+}
+
+.button-inactive{
+    color: #000;
+}
+.pull-right {
+    float: right!important;
+}
+    </style>
+  </head>
+  <body>
+    <div class="vtouch_header">
+      <!-- <img src="" class="mast_head_logo_blur"> -->
+      <div
+        class="paper-logo"
+        style="float: left; width: 20%; margin-left: 10px"
+      >
+        <a target="_top" href="http://ajinkyabharat.in/" title="Akola Main">
+          <span
+            style="
+              background-position: center center;
+              background-repeat: no-repeat;
+              background-size: contain;
+              margin: 5px 0;
+              display: block;
+              height: 50px;
+              width: 100%;
+              background-image: url('');
+            "
+          >
+            <img
+              src="{% static 'images/MATLOGO.jpeg' %}"
+              style="height: 44px"
+            />
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div id="de-container-wrapper" style="height: auto !important;     margin-top: 97px;">
+      <div id="de-container" style="display:block;position: relative;">
+<!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+
+ <img id="src-img" class="img-responsive" src="{{clip.clipimage.url}}" style="width: 420px;
+    margin-top: 47px;">
+
+    <a type="button"  href="{{clip.clipimage.url}}" class="btn btn-success" download="ajinkyabharat.jpg" >Download</a>
+      </div>
+      </div>
+
+      <!-- <nav class="navbar-default fixed-bottom" id="navbar_bottom" style="background-color:rgba(0,0,0,0.8); z-index: 11;"> -->
+        <!-- <ul class="nav navbar-nav bottom_nav_bared" style="width: 100%;
+        float: middle;
+        margin: 0px !important;" >
+              <li id="clip">
+  <i class="fa fa-scissors"></i>
+</li> -->
+            <!-- <li><a id="vtouch_menu" class="cd-dropdown-trigger" href="javascript:;" style="margin-top: -5px;"> <i class="fa fa-bars border_colorff"></i> </a></li> -->
+<!-- <li class="" id="Thumbs" >
+<a href="javascript:;" data-toggle="modal" data-target="#thumbpages"><i class="material-icons">grid_on</i></a>
+</li> -->
+<!-- <li class="" id="btn-clips" > -->
+<!-- <a href="javascript:;" data-toggle="modal" data-toggle="modal" data-target="#clips-modal"><i class="material-icons">flip_to_front</i></a> -->
+<!-- <a href="javascript:;"><i class="material-icons">flip_to_front</i></a>
+</li>
+<li id="" >
+<a class="swiper-button-prev swiper-button-disabled" style="margin-top: 0px;left:0px;">
+<i class="material-icons biggie">keyboard_arrow_left</i>
+</a>
+</li>
+<li id="" >
+<a class="swiper-button-next" style="margin-top: 0px;right:0px;">
+<i class="material-icons biggie">keyboard_arrow_right</i>
+</a>
+</li> -->
+<!-- <li id="epaer_feedback" >
+<a href="javascript:;" data-toggle="modal" data-toggle="modal" data-target="#feedback">
+  <i class="material-icons biggie" style="font-size: 2.0em !important;">feedback</i>
+</a>
+</li> -->
+<!-- <li id="zoom_range" >
+<a href="javascript:;">
+  <i class="material-icons" id="zoomslider" style="font-size: 2.0em !important;">zoom_in</i>
+</a>
+</li>
+
+</ul> -->
+
+
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="{% static 'node_modules/cropperjs/dist/cropper.js' %}"></script>
+    <script src="{% static 'node_modules/jquery-cropper/dist/jquery-cropper.js' %}"></script>
+ </body>
+</html>
