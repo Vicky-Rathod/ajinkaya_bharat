@@ -25,7 +25,7 @@ SECRET_KEY = '&175amd=2@r342xhckxb#2al8n*m50eu3*a($*16p7i=!elj#3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.ajinkyabharat.in']
+ALLOWED_HOSTS = ['www.ajinkyabharat.in','127.0.0.1','localhost']
 
 
 # Application definition
